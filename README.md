@@ -2,7 +2,7 @@
 This is a map example for my Udacity **Front End Web Developer Nanodegree**.
 
 ## Download application
-* CLick download button to download the application.
+* Click download button to download the application.
 * Uncompress the `.zip` file.
 * Open the `index.html` file.
 
