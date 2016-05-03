@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjwPFOPT3HJL4KmQsJf7z0pfPIhAs4Ptw"></script>    
+	<title>Map Application</title>
+
+</head>
+<body>
+<div class="container-fluid">
+	<div id="map">
+		<li><a data-bind="attr: {href:url}, text: content"></a></li>
+	</div>
+
+	<div class="col-xs-6 col-sm-4">
+		<div id="search">
+		<input id="search" type="search" placeholder="Search" data-bind="value: query, valueUpdate: 'keyup'"/>
+		</div>
+
+		<div id="locations">
+		<ul id="list-view" data-bind="foreach: filter">
+		<li id="list" data-bind="text:name, click: $root.clickMarker"></li>
+		</ul>
+		</div>
+	</div>
+</div>	
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="js/lib/knockout-3.4.0.js"></script>
+<script src="js/app.js"></script>
+
+
+</html>
