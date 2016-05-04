@@ -8,19 +8,23 @@
 #search {
 	position:absolute;
 	height: 30px;
-	top:60px;
+	width:70%;
+	top:0;
+	right:0;
+	margin:0;
+	padding:0;
 
 }
 
 #locations {
 	position:absolute;
-	max-width: 250px;
-	top:160px;
+	max-width: 200px;
+	top:450px;
 	background-color: white;
-
+	left:0;
+	bottom:0;
 	margin:0;
-
-
+	padding:0;
 }
 
 #list {
@@ -31,3 +35,8 @@
    	cursor:pointer;
 }
 
+#list:hover {
+	background-color: red;
+	color: #666;
+	cursor: pointer;
+}

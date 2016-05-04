@@ -1,6 +1,4 @@
-
-
-// List of my favorite places in San Francisco
+// List of my favorite places in Vancouver
 var locations = [
 	{
 		name:'Tavola',
@@ -74,6 +72,7 @@ var ViewModel = function() {
 	//Initialize Google map
 	function initMap() {
 
+	var $geoFail = $('#locations');
 	map = new google.maps.Map($('#map')[0],
 		{
 			mapTypeId: google.maps.MapTypeId.TERRAIN
@@ -86,6 +85,8 @@ var ViewModel = function() {
 			new google.maps.LatLng(bounds.northeast.lat, bounds.northeast.lng));
 		map.fitBounds(mapBounds);
 		map.setZoom(12);
+	}).fail(function(){
+		$geoFail.text('Sorry, the map not be loaded!');
 	});
 	}
 
@@ -104,17 +105,32 @@ var ViewModel = function() {
 			animation: google.maps.Animation.DROP,
 			map: map
 		});
+		marker.addListener('click',toggleBounce);
+
+//marker animation when select
+	function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+    setTimeout(function(){
+    	marker.setAnimation(null);
+    },750);
+  }
+}
 
 		function article(content, url) {
 			var self = this;
 			self.content = content;
 			self.url = url;
 		}
+
+
 		//wiki API
 		function wikipediaData() {
 			var wikiUrl ='http://en.wikipedia.org/w/api.php?action=opensearch&search=' + data.name + '&format=json&callback=wikiCallback';
 			var wikiTimeout = setTimeout(function(){
-				$wikiData.text("Fail to load Wiki resources");
+				alert("Fail to load Wiki resources");
 			}, 5000);
 
 			$.ajax({
@@ -133,6 +149,8 @@ var ViewModel = function() {
 					clearTimeout(wikiTimeout);
 				}
 			});
+
+			return false;
 		}
 		//attach wiki content to infowindow
 		function wiki_content(articles){
@@ -214,7 +232,13 @@ var ViewModel = function() {
 //end of viewmodel	
 };
 
-ko.applyBindings(new ViewModel());
+function googleSuccess() {
+	ko.applyBindings(new ViewModel());
+}
+
+function googleError() {
+	document.getElementById('locations').innerHTML = '<div>Sorry, Google Map could not be loaded</div>';
+}
 
 
 
