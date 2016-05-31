@@ -20,7 +20,7 @@
 	position:absolute;
 	max-width: 200px;
 	top:450px;
-	background-color: white;
+	background:linear-gradient(to bottom, #FC354C , #0ABFBC);;
 	left:0;
 	bottom:0;
 	margin:0;
@@ -30,13 +30,16 @@
 #list {
 	float:left;
 	width:100%;
-	padding:0;
+	padding-top:8px;
     margin: 0;
    	cursor:pointer;
+   	list-style: none;
+   	border-bottom: solid #dedede;
 }
 
 #list:hover {
-	background-color: red;
-	color: #666;
+	background-color:#FBBC05;
+	color: #fff;
 	cursor: pointer;
 }
+ 
