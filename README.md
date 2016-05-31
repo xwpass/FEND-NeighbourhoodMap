@@ -1,8 +1,7 @@
 # Neighbourhood-map
-This is a map example for my Udacity **Front End Web Developer Nanodegree**.
 
 ## Live Demo
-http://xwpass.github.io/FEND-NeighbourhoodMap
+[Click here](http://xwpass.github.io/FEND-NeighbourhoodMap)
 
 ## Download application
 * Click download button to download the application.
