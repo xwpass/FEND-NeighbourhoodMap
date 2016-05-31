@@ -13,6 +13,7 @@
 	left:0;
 	margin:0;
 	padding:0;
+	
 
 }
 
@@ -20,7 +21,7 @@
 	position:absolute;
 	max-width: 200px;
 	top:450px;
-	background:linear-gradient(to bottom, #FC354C , #0ABFBC);;
+	background:linear-gradient(to bottom, rgba(252,53,76,0.5) , rgba(10,191,188,0.5));;
 	left:0;
 	bottom:0;
 	margin:0;
