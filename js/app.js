@@ -1,4 +1,4 @@
-// List of my favorite places in Vancouver
+ // List of my favorite places in Vancouver
 var locations = [
 	{
 		name:'Tavola',
